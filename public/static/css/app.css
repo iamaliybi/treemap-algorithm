@@ -1,0 +1,103 @@
+:root {
+	--app-primary: rgb(21, 32, 43);
+
+	--app-secondary-100: rgb(25, 39, 52);
+
+	--app-secondary-200: rgb(34, 48, 60);
+
+	--app-white: rgb(255, 255, 255);
+
+	--app-gray: rgb(136, 153, 172);
+}
+
+body {
+	min-width: 100dvw;
+	max-width: 100dvw;
+	min-height: 100dvh;
+	max-height: 100dvh;
+	overflow: hidden;
+	background-color: var(--app-primary);
+}
+
+#__LOADING {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	z-index: 9999;
+	transform: translate(-50%, -50%);
+}
+
+.heart {
+	display: inline-block;
+	position: relative;
+	width: 80px;
+	height: 80px;
+	transform: rotate(45deg);
+	transform-origin: 40px 40px;
+}
+
+.heart div {
+	top: 32px;
+	left: 32px;
+	position: absolute;
+	width: 32px;
+	height: 32px;
+	background: #fff;
+	animation: h-loading 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.heart div:after,
+.heart div:before {
+	content: " ";
+	position: absolute;
+	display: block;
+	width: 32px;
+	height: 32px;
+	background: #fff;
+}
+
+.heart div:before {
+	left: -24px;
+	border-radius: 50% 0 0 50%;
+}
+
+.heart div:after {
+	top: -24px;
+	border-radius: 50% 50% 0 0;
+}
+
+@keyframes h-loading {
+	0% {
+		transform: scale(0.95);
+	}
+	5% {
+		transform: scale(1.1);
+	}
+	39% {
+		transform: scale(0.85);
+	}
+	45% {
+		transform: scale(1);
+	}
+	60% {
+		transform: scale(0.95);
+	}
+	100% {
+		transform: scale(0.9);
+	}
+}
+
+::-webkit-scrollbar {
+	width: 8px;
+	height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--app-gray);
+	border-radius: 3px;
+}
+
+::-webkit-scrollbar-track {
+	border-radius: 0px;
+	background: var(--app-secondary-100);
+}
